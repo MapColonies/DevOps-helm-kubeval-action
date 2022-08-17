@@ -33,6 +33,10 @@ inputs:
     description: "Whether or not to skip custom resources"
     default: "true"
     required: false
+  schema_location:
+    description: "Base URL used to download schemas"
+    default: "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/"
+    required: false
 runs:
   using: 'docker'
   image: './Dockerfile'
@@ -44,3 +48,4 @@ runs:
     KUBERNETES_VERSION: ${{ inputs.version }}
     OPENSHIFT: ${{ inputs.openshift }}
     IGNORE_MISSING_SCHEMAS: ${{ inputs.ignore_missing_schemas }}
+    SCHEMA_LOCATION: ${{ inputs.schema_location }}

@@ -18,6 +18,7 @@ run_kubeval() {
             "--kubernetes-version=$KUBERNETES_VERSION" \
             "--openshift=$OPENSHIFT" \
             "--ignore-missing-schemas=$IGNORE_MISSING_SCHEMAS" \
+            "--schema-location=$SCHEMA_LOCATION" \
         {} +;
     rm -rf helm-output;
 }

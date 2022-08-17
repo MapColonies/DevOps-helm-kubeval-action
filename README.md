@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: test
-      uses: desaintmartin/helm-kubeval-action@master
+      uses: MapColonies/DevOps-helm-kubeval-action@master
       with:
         path: ./helm-charts
         config: ./config_repos
@@ -48,3 +48,4 @@ For more information on inputs, see the [API Documentation](https://developer.gi
 | strict | true | Whether ot not to fail for additional properties in objects |
 | ignore_missing_schemas | true | Whether to fail if unknown resources are found |
 | version | master | Which version of Kubernetes to validate against |
+| schema_location | https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/ | Base URL used to download schemas |
