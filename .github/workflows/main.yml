@@ -31,7 +31,7 @@ jobs:
           path: 'test/charts'
           version: 1.19.0
           ignore_missing_schemas: false
-   test3:
+  test3:
     runs-on: ubuntu-latest
     name: Helm Kubeval Action test single chart
     steps:
