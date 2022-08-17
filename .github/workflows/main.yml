@@ -7,7 +7,7 @@ on:
     - '*'
 
 jobs:
-  test:
+  test1:
     runs-on: ubuntu-latest
     name: Helm Kubeval Action test
     steps:
@@ -17,3 +17,15 @@ jobs:
         uses: ./ # Uses an action in the root directory
         with:
           path: 'test/charts'
+          version: 1.21
+  test2:
+    runs-on: ubuntu-latest
+    name: Helm Kubeval Action test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: helm kubeval
+        uses: ./ # Uses an action in the root directory
+        with:
+          path: 'test/charts'
+          version: 1.19
