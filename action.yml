@@ -11,7 +11,7 @@ inputs:
     required: false
   config:
     description: "The path to the configuration file containing your Chart(s) Repository Url(s)"
-    default: "config_repos"
+    default: ""
     required: false
   output:
     description: "Output format for results"

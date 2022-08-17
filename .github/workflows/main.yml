@@ -13,19 +13,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: helm kubeval
+      - name: helm kubeval 1.21.6
         uses: ./ # Uses an action in the root directory
         with:
           path: 'test/charts'
-          version: 1.21
+          version: 1.21.6
+          ignore_missing_schemas: false
   test2:
     runs-on: ubuntu-latest
     name: Helm Kubeval Action test
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: helm kubeval
+      - name: helm kubeval 1.19.0
         uses: ./ # Uses an action in the root directory
         with:
           path: 'test/charts'
-          version: 1.19
+          version: 1.19.0
+          ignore_missing_schemas: false
+   test3:
+    runs-on: ubuntu-latest
+    name: Helm Kubeval Action test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: helm kubeval single chart
+        uses: ./ # Uses an action in the root directory
+        with:
+          path: 'test2'
+          version: 1.21.6
+          ignore_missing_schemas: false
