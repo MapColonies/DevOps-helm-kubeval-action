@@ -19,6 +19,7 @@ run_kubeval() {
             "--openshift=$OPENSHIFT" \
             "--ignore-missing-schemas=$IGNORE_MISSING_SCHEMAS" \
             "--schema-location=$SCHEMA_LOCATION" \
+            "--skip-kinds=$SKIP_KINDS" \
         {} +;
     rm -rf helm-output;
 }

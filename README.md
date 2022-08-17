@@ -49,3 +49,4 @@ For more information on inputs, see the [API Documentation](https://developer.gi
 | ignore_missing_schemas | true | Whether to fail if unknown resources are found |
 | version | master | Which version of Kubernetes to validate against |
 | schema_location | https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/ | Base URL used to download schemas |
+| skip_kinds | Route | Comma-separated list of case-sensitive kinds to skip when validating against schemas |

@@ -37,6 +37,10 @@ inputs:
     description: "Base URL used to download schemas"
     default: "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/"
     required: false
+  skip_kinds:
+    description: "Comma-separated list of case-sensitive kinds to skip when validating against schemas"
+    default: "Route"
+    required: false
 runs:
   using: 'docker'
   image: './Dockerfile'
@@ -49,3 +53,4 @@ runs:
     OPENSHIFT: ${{ inputs.openshift }}
     IGNORE_MISSING_SCHEMAS: ${{ inputs.ignore_missing_schemas }}
     SCHEMA_LOCATION: ${{ inputs.schema_location }}
+    SKIP_KINDS: ${{ inputs.skip_kinds }}
